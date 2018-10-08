@@ -1,0 +1,8 @@
+FROM alpine-jdk:base
+COPY target/MicroserviceConfigServer.jar /home/lib/
+RUN mkdir /var/lib/config-repo
+COPY config-repo /var/lib/config-repo
+ENTRYPOINT ["/usr/bin/java"]
+CMD ["-jar", "/home/lib/MicroserviceConfigServer.jar"]
+VOLUME /var/lib/config-repo
+EXPOSE 9090

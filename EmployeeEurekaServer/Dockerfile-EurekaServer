@@ -1,0 +1,5 @@
+FROM alpine-jdk:base
+COPY target/MicroserviceEurekaServer.jar /home/lib/
+ENTRYPOINT ["/usr/bin/java"]
+CMD ["-jar", "/home/lib/MicroserviceEurekaServer.jar"]
+EXPOSE 9091

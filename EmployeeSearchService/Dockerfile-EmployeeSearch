@@ -1,0 +1,6 @@
+FROM alpine-jdk:base
+RUN apk --no-cache add netcat-openbsd
+COPY target/EmployeeSearchService.jar /home/lib/
+COPY EmployeeSearch-entrypoint.sh /home/bin/EmployeeSearch-entrypoint.sh
+RUN chmod 755 /home/bin/EmployeeSearch-entrypoint.sh
+EXPOSE 8080
