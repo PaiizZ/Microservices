@@ -2,18 +2,7 @@ package com.example.EmployeeDashBoardService.controllers;
 
 import java.util.Collection;
 
-import com.example.EmployeeDashBoardService.models.EmployeeInfo;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import org.bouncycastle.math.ec.custom.sec.SecT571Field;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
