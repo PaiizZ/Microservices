@@ -1,7 +1,9 @@
-package com.example.EmployeeDashBoardService;
+package com.example.EmployeeDashBoardService.controllers;
 
 import java.util.Collection;
 
+import com.example.EmployeeDashBoardService.services.EmployeeServiceProxy;
+import com.example.EmployeeDashBoardService.models.EmployeeInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;

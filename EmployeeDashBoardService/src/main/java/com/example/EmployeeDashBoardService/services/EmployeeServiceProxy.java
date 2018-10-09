@@ -1,6 +1,8 @@
-package com.example.EmployeeDashBoardService;
+package com.example.EmployeeDashBoardService.services;
 
 import java.util.Collection;
+
+import com.example.EmployeeDashBoardService.models.EmployeeInfo;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.web.bind.annotation.PathVariable;

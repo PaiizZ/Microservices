@@ -1,9 +1,9 @@
-package com.example.EmployeeSearchService;
+package com.example.EmployeeSearchService.services;
+import com.example.EmployeeSearchService.models.Employee;
 import org.springframework.stereotype.Service;
 
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

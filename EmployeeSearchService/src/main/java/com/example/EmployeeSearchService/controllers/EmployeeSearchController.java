@@ -1,5 +1,7 @@
-package com.example.EmployeeSearchService;
+package com.example.EmployeeSearchService.controllers;
 
+import com.example.EmployeeSearchService.models.Employee;
+import com.example.EmployeeSearchService.services.EmployeeSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;

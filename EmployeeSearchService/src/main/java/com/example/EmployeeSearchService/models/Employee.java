@@ -1,6 +1,6 @@
-package com.example.EmployeeDashBoardService;
+package com.example.EmployeeSearchService.models;
 
-public class EmployeeInfo {
+public class Employee {
     private Long employeeId;
     private String name;
     private String practiceArea;
@@ -41,4 +41,3 @@ public class EmployeeInfo {
         return "Employee [employeeId=" + employeeId + ", name=" + name + ", practiceArea=" + practiceArea + ", designation=" + designation + ", companyInfo=" + companyInfo + "]";
     }
 }
-
