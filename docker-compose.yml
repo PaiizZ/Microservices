@@ -48,8 +48,8 @@ services:
         depends_on:
             - config-server
             - eureka-server
-        # logging:
-        #     driver: json-file
+        logging:
+            driver: json-file
     EmployeeDashboardService:
         container_name: EmployeeDashboard
         build:
@@ -72,26 +72,32 @@ services:
         depends_on:
             - config-server
             - eureka-server
-        # logging:
-        #     driver: json-file
-    # ZuulServer:
-    #     container_name: ZuulServer
-    #     build:
-    #         context: .
-    #         dockerfile: Dockerfile-ZuulServer
-    #     image: zuulserver:latest
-    #     expose:
-    #         - 8084
-    #     ports:
-    #         - 8084:8084
-    #     networks:
-    #         - emp-network
-    #     links:
-    #         - eureka-server:eureka-server
-    #     depends_on:
-    #         - eureka-server
-    #     logging:
-    #         driver: json-file
+        logging:
+            driver: json-file
+    ZuulServer:
+        container_name: ZuulServer
+        build:
+            context: ./EmployeeZuulService
+            dockerfile: Dockerfile-ZuulServer
+        image: zuulserver:latest
+        environment:
+            - spring.cloud.config.uri=http://config-server:9090
+            - eureka.client.serviceUrl.defaultZone=http://eureka-server:9091/eureka/
+        entrypoint: /home/bin/EmployeeZuul-entrypoint.sh
+        expose:
+            - 8084
+        ports:
+            - 8084:8084
+        networks:
+            - emp-network
+        links:
+            - config-server:config-server
+            - eureka-server:eureka-server
+        depends_on:
+            - config-server
+            - eureka-server
+        logging:
+            driver: json-file
 networks:
     emp-network:
         driver: bridge

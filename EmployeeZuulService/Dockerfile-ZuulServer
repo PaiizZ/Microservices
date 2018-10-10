@@ -1,0 +1,6 @@
+FROM alpine-jdk:base
+RUN apk --no-cache add netcat-openbsd
+COPY target/EmployeeZuulService.jar /home/lib/
+COPY EmployeeZuul-entrypoint.sh /home/bin/EmployeeZuul-entrypoint.sh
+RUN chmod 755 /home/bin/EmployeeZuul-entrypoint.sh
+EXPOSE 8084
